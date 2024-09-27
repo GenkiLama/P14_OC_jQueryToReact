@@ -1,0 +1,44 @@
+@import "../../../sass/main.scss";
+
+.table {
+  //@include table;
+  display: grid;
+
+  &_header {
+    //direction, justify, align, gap
+    @include flex(row, space-between, null, null);
+
+    &_cell:nth-last-child(1) {
+      border-right: none;
+    }
+
+    &_cell {
+      flex: 1;
+      background-color: $color-secondary;
+      color: $color-light;
+      font-size: clamp(1.8rem, 2vw, 2rem);
+      padding: 1rem;
+      text-transform: capitalize;
+      border-right: 1px solid $color-light;
+    }
+  }
+
+  &_body {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $color-dark;
+
+    &_cell:nth-last-child(1) {
+      border-right: none;
+    }
+
+    &_cell {
+      flex: 1;
+      @include flex(row, null, center, null);
+      padding: 1rem;
+      font-size: clamp(1.8rem, 2vw, 2rem);
+      border-right: 1px solid $color-dark;
+    }
+  }
+}

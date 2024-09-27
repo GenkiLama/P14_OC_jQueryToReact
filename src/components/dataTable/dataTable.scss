@@ -1,0 +1,44 @@
+@import "../../sass/main.scss";
+
+.dataTable {
+  @include flex(column, null, null, 1.5rem);
+  width: 100%;
+
+  &_notFound {
+    @include flex(row, center, center, null);
+    height: 10rem;
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+
+  &_header {
+    @include flex(row, space-between, null, null);
+
+    @include medium-screen {
+      @include flex(column, null, center, 1rem);
+    }
+    &_entries {
+      @include flex(row, null, flex-end, null);
+    }
+    &_search {
+      margin-left: auto;
+
+      @include medium-screen {
+        width: 50%;
+        margin-left: unset;
+      }
+
+      @include small-screen {
+        width: 100%;
+      }
+    }
+  }
+
+  &_footer {
+    @include flex(row, space-between, null, null);
+    font-size: clamp(1.8rem, 2vw, 2rem);
+
+    @include medium-screen {
+      @include flex(column, null, center, 1rem);
+    }
+  }
+}

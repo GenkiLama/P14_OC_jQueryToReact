@@ -1,0 +1,60 @@
+@mixin btn {
+  padding: 8px;
+  border-radius: 0.5rem;
+  font-size: clamp(1.8rem, 2vw, 2rem);
+  font-weight: bold;
+  margin: 0 auto;
+  letter-spacing: 0.1rem;
+  color: $color-secondary;
+  background-color: $color-light;
+  border: 1px solid $color-dark;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    color: $color-light;
+    background-color: $color-secondary;
+  }
+
+  &:disabled {
+    cursor: unset;
+  }
+
+  @include medium-screen {
+    margin: 0 auto;
+  }
+}
+
+@mixin flex($direction: row, $justify: null, $align: null, $gap: null) {
+  display: flex;
+  @if $direction != row {
+    flex-direction: $direction;
+  }
+  @if $justify != null {
+    justify-content: $justify;
+  }
+  @if $align != null {
+    align-items: $align;
+  }
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+@mixin page {
+  @include flex(row, center, null, null);
+  padding: 4rem;
+  min-height: calc(100vh - 10rem);
+
+  @include small-screen {
+    padding: 2rem 1rem;
+  }
+}
+
+@mixin table {
+  @include flex(column, null, null, null);
+  border-radius: 0.5rem;
+  letter-spacing: 1px;
+  text-align: left;
+  width: 100%;
+  border: 1px solid $color-dark;
+}

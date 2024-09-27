@@ -1,0 +1,29 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html{
+  font-size: 62.5%;
+  background-color: $color-light;
+  font-family: "Montserrat", sans-serif;
+}
+
+#root{
+  max-width: 2500px;
+  margin: 0 auto;
+  background-color: $color-primary;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,6 @@
+@import "../../sass/main.scss";
+
+label {
+  @include flex(row, null, null, 0.5rem);
+  font-size: clamp(1.8rem, 2vw, 2rem);
+}

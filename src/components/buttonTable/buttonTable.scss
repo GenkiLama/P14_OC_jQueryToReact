@@ -1,0 +1,10 @@
+@import "../../sass/main.scss";
+
+button {
+  @include btn;
+}
+
+.disable {
+  background-color: rgba(160, 160, 160, 0.225);
+  color: grey;
+}

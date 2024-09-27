@@ -1,0 +1,60 @@
+@import "../../sass/main.scss";
+
+.navbar {
+  //direction, justify, align, gap
+  @include flex(row, space-between, null, null);
+  height: 10rem;
+  padding: 2rem 4rem;
+  background-color: $color-secondary;
+  color: $color-light;
+
+  @include small-screen {
+    padding: 2rem 1rem;
+  }
+
+  a {
+    @include flex(row, null, center, 1rem);
+    font-weight: bold;
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+
+  img {
+    height: 100%;
+  }
+
+  ul {
+    @include flex(row, null, center, 4rem);
+
+    @include small-screen {
+      gap: 2rem;
+    }
+
+    li a {
+      &:hover span::before {
+        width: 100%;
+      }
+      span {
+        position: relative;
+
+        @include medium-screen {
+          display: none;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0;
+          width: 0;
+          height: 0.2rem;
+          background-color: $color-primary;
+          transition: width 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}

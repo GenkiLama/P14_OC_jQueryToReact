@@ -1,0 +1,34 @@
+@import "../../../sass/main.scss";
+
+.table {
+  @include table;
+
+  &_group {
+    display: flex;
+    flex-wrap: wrap;
+
+    &_title {
+      @include flex(row, null, center, null);
+      padding: 1rem;
+      width: 50%;
+      background-color: $color-secondary;
+      color: $color-light;
+      text-transform: capitalize;
+      border-bottom: 1px solid $color-light;
+      font-size: clamp(1.8rem, 2vw, 2rem);
+    }
+
+    &:last-child .table_group_title,
+    &:last-child .table_group_value {
+      border-bottom: none;
+    }
+
+    &_value {
+      @include flex(row, null, center, null);
+      padding: 1rem;
+      width: 50%;
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      border-bottom: 1px solid $color-dark;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../sass/main.scss";
+
+.form {
+  //direction, justify, align, gap
+  @include flex(column, null, null, 4rem);
+  width: 100%;
+  max-width: 80rem;
+
+  @include medium-screen {
+    gap: 1.5rem;
+  }
+
+  .drop {
+    @include flex(column, null, null, 1rem);
+    width: 100%;
+
+    fieldset {
+      width: 50%;
+
+      @include medium-screen {
+        width: 100%;
+      }
+    }
+  }
+  &_group {
+    @include flex(row, null, null, 2rem);
+    width: 100%;
+
+    @include medium-screen {
+      @include flex(column, null, null, 1rem);
+    }
+    &_control {
+      @include flex(column, null, null, 1rem);
+      width: 100%;
+
+      input {
+        width: 100%;
+        height: 4rem;
+        padding: 0 1rem;
+        border: 1px solid $color-dark;
+        border-radius: 0.5rem;
+        font-size: clamp(1.8rem, 1.8vw, 1.8rem);
+      }
+    }
+  }
+  label {
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+  fieldset {
+    @include flex(column, null, null, 2rem);
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid $color-secondary;
+    border-radius: 0.5rem;
+  }
+  &_legend {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
+  &_btn {
+    @include flex(row, null, null, 1rem);
+    @include btn;
+  }
+  .error {
+    color: $color-error;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 1.6vw, 1.6rem);
+  }
+}
